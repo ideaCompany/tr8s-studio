@@ -71,11 +71,21 @@ open.
 
 ## Why it exists
 
-It started as a small question: can a Linux laptop read a pattern off a
-TR-8S over USB? The protocol turned out to be undocumented, so it was
-reverse-engineered one byte at a time, verified against the hardware, and
-written down. Then the studio grew around it, and then the assistant, and at
-some point "make me a house track" simply worked.
+It started with a lazy request. The author asked Claude to set up a few
+basic patterns on his TR-8S and fetch some new sounds from the internet,
+because doing that on the machine is a hassle of menu diving. There was no
+way for it to talk to the machine, so it started reverse-engineering the
+protocol, one byte at a time, with a human changing one thing on the panel
+and the AI reading the result back. At some point the only sensible answer
+was: well, why not go all the way. The studio grew around the protocol, then
+the assistant, and then "make me a house track" simply worked.
+
+The intent was never that the AI makes the music. The intent is that the
+TR-8S becomes a machine that helps you learn: pick a genre, see what a
+typical lo-fi beat looks like on the steps and why, get a starting point,
+then get feedback from a purely technical standpoint on what you do with it.
+The human does the feeling part. The AI does the theory, the chores and the
+patient explaining.
 
 Its author has three kids, one wife, and a TR-8S, and only one of those
 three comes with an off switch. The other two have made it clear that this
