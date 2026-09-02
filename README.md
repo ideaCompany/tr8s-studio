@@ -17,6 +17,44 @@ minute, using your own Claude subscription.
 
 ![The assistant building a house track while it explains what it is doing](docs/screenshots/03-house-track-built.jpg)
 
+## The vision
+
+This is not another tool for letting an AI make music. There are better ones
+for that, and that was never the point.
+
+The point is the person at the machine. A drum computer is a wonderful thing
+to learn on and a hard thing to learn from: sixteen buttons, eleven sounds, a
+hundred settings, and no one to tell you why the hats go *there* and what
+makes a groove roll. **TR-8S Studio wants to be the tutor sitting next to
+you.** It should be able to say "that's a house beat; the clap on two and four
+is what you're hearing; try moving the open hat to the offbeat and listen to
+what changes", let you do it with your own fingers on the real pads, hear
+what you did, and tell you what just happened in words a beginner can use.
+
+Where it goes from there: genre lessons you play through rather than read,
+the assistant as a patient teacher rather than a producer-for-hire, and a
+playful layer on top: think sprites and little crowds that get moving when the
+groove locks in, a bit of Guitar Hero spirit in service of actually learning
+an instrument. Rhythm, genres, drum programming, and the joy of it.
+
+The pieces that exist today (live mirror of the machine, the assistant that
+sees what you see, sounds chosen from measurement, melodies, undo) are the
+foundation for that. The tutoring, the lessons and the fun on top are wide
+open.
+
+## Why it exists
+
+It started as a small question: can a Linux laptop read a pattern off a
+TR-8S over USB? The protocol turned out to be undocumented, so it was
+reverse-engineered one byte at a time, verified against the hardware, and
+written down. Then the studio grew around it, and then the assistant, and at
+some point "make me a house track" simply worked.
+
+Its author has three kids and a wife who will, quite reasonably, not accept
+this becoming a second job. So it is here, in the open, for anyone who finds
+the idea as exciting as he does. **It is up for grabs.** Fork it, take it
+somewhere, join in, and please do.
+
 ## What it does
 
 **A studio that follows the machine.** Change pattern on the TR-8S and the
@@ -149,7 +187,14 @@ seeds and a self-correction about undo:
 ## Contributing
 
 This project moved from "can we even read a pattern" to "make me a house
-track" in a few days, and there is plenty of room to run:
+track" in a few days, and the vision above is mostly unbuilt. It is meant to
+be picked up by many hands, not maintained by one. Some directions:
+
+- **The tutor.** Lessons a beginner plays through: what a backbeat is, why
+  house and techno differ, where swing lives. The assistant explaining what
+  the user just did on the pads, not only doing things for them.
+- **The fun layer.** Sprites, a crowd, something that reacts when the groove
+  locks in. The machine already tells the studio every hit as it happens.
 
 - **More assistants.** An OpenAI or Gemini backend over the same tool
   registry.
