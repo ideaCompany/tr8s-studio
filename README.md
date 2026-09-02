@@ -17,6 +17,31 @@ minute, using your own Claude subscription.
 
 ![The assistant building a house track while it explains what it is doing](docs/screenshots/03-house-track-built.jpg)
 
+## First, what is a TR-8S?
+
+![A Roland TR-8S on a desk, pads lit](docs/images/roland-tr-8s.jpg)
+
+The Roland TR-8S is a drum machine: a box that plays drum sounds in a pattern
+you program by pressing buttons. Sixteen pads along the bottom are the
+sixteen steps of a bar; press a pad and the selected drum sounds on that
+step. Eleven instruments (kick, snare, toms, rimshot, clap, hats, cymbals)
+each have their own row of steps, a fader for level and knobs for tune,
+decay and one more thing. Eight variations, A to H, let you build an intro,
+a main groove, a break and a drop, and 128 slots hold your patterns. It has
+the sounds of the old 808 and 909 that half of dance music was built on, plus
+samples. Nearly every techno, house and hip hop record you know started on a
+machine like this, and many still do.
+
+It is a wonderful instrument and a brick wall of a learning curve.
+
+**This software needs the real machine.** It talks to the TR-8S over its USB
+cable; it does not emulate one, and nothing here makes a sound on its own.
+Plug the machine in, start the studio, and the two become one instrument.
+
+*Photo: "Roland TR-8S Drum Machine" by Nir Yaniv,
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Roland_TS-8S_Drum_Machine.jpg),
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*
+
 ## The vision
 
 This is not another tool for letting an AI make music. There are better ones
@@ -50,10 +75,12 @@ reverse-engineered one byte at a time, verified against the hardware, and
 written down. Then the studio grew around it, and then the assistant, and at
 some point "make me a house track" simply worked.
 
-Its author has three kids and a wife who will, quite reasonably, not accept
-this becoming a second job. So it is here, in the open, for anyone who finds
-the idea as exciting as he does. **It is up for grabs.** Fork it, take it
-somewhere, join in, and please do.
+Its author has three kids, one wife, and a TR-8S, and only one of those
+three comes with an off switch. The other two have made it clear that this
+does not get to become a second job. So it is here, in the open, for anyone
+who finds the idea as exciting as he does. **It is up for grabs.** Fork it,
+take it somewhere, join in, and please do. He will be in the comments, in
+between bedtimes.
 
 ## What it does
 
