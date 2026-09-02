@@ -17,6 +17,8 @@ minute, using your own Claude subscription.
 
 ![The assistant building a house track while it explains what it is doing](docs/screenshots/03-house-track-built.jpg)
 
+**Watch it happen (1 min, machine audible):** https://youtu.be/9lKcmGzcwPQ
+
 ## First, what is a TR-8S?
 
 ![A Roland TR-8S on a desk, pads lit](docs/images/roland-tr-8s.jpg)
