@@ -251,3 +251,8 @@ first issues. Run `pytest tests/` before and after.
 ## Licence
 
 MIT. See [`LICENSE`](LICENSE).
+
+Roland and TR-8S are trademarks of Roland Corporation. This project is an
+independent, community effort: it is not affiliated with, endorsed by or
+supported by Roland. It contains no Roland firmware, samples or software; the
+protocol was worked out by observing a TR-8S over its own USB port.
