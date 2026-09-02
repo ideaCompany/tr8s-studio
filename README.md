@@ -135,6 +135,17 @@ the physical faders and cannot be set. Melodies need Coarse Tune on the
 instrument's CTRL knob and MOTION ON, by hand. The studio and the assistant
 know all of this and say so at the moment it matters, not before.
 
+## More of the session
+
+The assistant thinking out loud while it reads the slot and picks a safe kit:
+
+![Reasoning shown live as the track is built](docs/screenshots/02-house-track-thinking.jpg)
+
+And the wrap-up, both tracks of the session summarised from memory, with the
+seeds and a self-correction about undo:
+
+![The session summary](docs/screenshots/07-session-summary.jpg)
+
 ## Contributing
 
 This project moved from "can we even read a pattern" to "make me a house
