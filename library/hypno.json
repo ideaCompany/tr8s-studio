@@ -1,0 +1,115 @@
+{
+ "name": "HYPNO",
+ "tempo": 132.0,
+ "kit": 123,
+ "scale": "16",
+ "shuffle": 0,
+ "roots": {
+  "BD": "F#1",
+  "SD": "E3",
+  "LT": "C2",
+  "MT": "C4",
+  "HT": "F#3"
+ },
+ "variations": {
+  "A": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "RS": "o..o...o..o..o..",
+    "CH": "....o..........o"
+   }
+  },
+  "B": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".o..o.o.o..o.o.o"
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "F#2 . F#2 . A2 . F#2 . F#2 . E2 . C#2 . F#2 ."
+    }
+   }
+  },
+  "C": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".x..x.x.x..x.x.x",
+    "OH": "......x.......x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "F#2 . F#2 . F#2 . F#2 . C#2 . A2 . C#2 . G1 ."
+    }
+   }
+  },
+  "D": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "SD": "............x.xx",
+    "MT": "ooo.oo.oo.oo.oo.",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".x..x.x.x..x.x.x",
+    "OH": "......x.......x."
+   }
+  },
+  "E": {
+   "tracks": {
+    "RS": "o..o...o..o..o..",
+    "CH": ".o..o.o.o..o.o.o"
+   }
+  },
+  "F": {
+   "tracks": {
+    "BD": "X..............."
+   }
+  },
+  "G": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "MT": "ooo.oo.oo.oo.oo.",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".x..x.x.x..x.x.x",
+    "OH": "......x.......x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "A2 . G2 . C#2 . F#2 . F#2 . C#2 . A2 . A2 ."
+    }
+   }
+  },
+  "H": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "MT": "ooo.oo.oo.ooxxxx",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".x..x.x.x..x.x.x",
+    "OH": "......x.......x."
+   }
+  }
+ },
+ "slot": 119,
+ "panel": "8-08",
+ "_meta": {
+  "style": "hypnotic",
+  "key": "F# phrygian",
+  "about": "5- and 7-step cycles against the four",
+  "built_by": "tr8s track.create",
+  "origin_panel": "8-08"
+ }
+}

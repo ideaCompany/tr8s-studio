@@ -1,0 +1,113 @@
+{
+ "name": "BROKEN",
+ "tempo": 133.0,
+ "kit": 125,
+ "scale": "16",
+ "shuffle": 0,
+ "roots": {
+  "BD": "C2",
+  "SD": "E3",
+  "LT": "C2",
+  "MT": "C5",
+  "HT": "F#3",
+  "RS": "F#4"
+ },
+ "variations": {
+  "A": {
+   "tracks": {
+    "BD": "X.....x...x.....",
+    "CH": "..x...x.o.x.o..."
+   }
+  },
+  "B": {
+   "tracks": {
+    "BD": "X.....x...xo....",
+    "SD": "....X.......X...",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "RS": "o.o..o.o.o..o.o.",
+    "CH": "ooxoooxoooxoooxo"
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "B1 . E2 . E2 . E2 . E2 . E2 . E2 . E2 ."
+    }
+   }
+  },
+  "C": {
+   "tracks": {
+    "BD": "X.....x...xo....",
+    "SD": "....X.......X...",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "RS": "o.o..o.o.o..o.o.",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "......x.......x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "G1 . E2 . E2 . D2 . G1 . E2 . G2 . B1 ."
+    }
+   }
+  },
+  "D": {
+   "tracks": {
+    "BD": "X...X.x.X.xoX...",
+    "SD": "....X.......X...",
+    "MT": "............xxxx",
+    "RS": "o.o..o.o.o..o.o.",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "......x.......x."
+   }
+  },
+  "E": {
+   "tracks": {
+    "SD": "....X.......X...",
+    "CH": "o.x.o.x.o.x.o.x."
+   }
+  },
+  "F": {
+   "tracks": {
+    "BD": "X..............."
+   }
+  },
+  "G": {
+   "tracks": {
+    "BD": "X.....x...xo....",
+    "SD": "....X.......X...",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "RS": "o.o..o.o.o..o.o.",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "......x.......x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "E2 . D2 . E2 . E2 . E2 . E2 . G2 . E2 ."
+    }
+   }
+  },
+  "H": {
+   "tracks": {
+    "BD": "X...X.x.X.xoX...",
+    "SD": "....X.......Xooo",
+    "RS": "o.o..o.o.o..o.o.",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "......x.......x.",
+    "CC": "...............x"
+   }
+  }
+ },
+ "slot": 125,
+ "panel": "8-14",
+ "_meta": {
+  "style": "broken",
+  "key": "E minor",
+  "about": "the kick syncopates",
+  "built_by": "tr8s track.create",
+  "origin_panel": "8-14"
+ }
+}

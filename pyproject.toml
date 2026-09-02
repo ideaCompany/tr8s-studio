@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tr8s"
+version = "0.1.0"
+description = "Drive a Roland TR-8S over USB: patterns, kits, melodies, and an LLM-facing tool surface"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["tr-8s", "roland", "midi", "sysex", "drum-machine", "mcp"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio :: MIDI",
+]
+dependencies = []
+
+[project.optional-dependencies]
+chat = ["anthropic>=0.40"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+tr8s = "tr8s.cli:main"
+tr8s-mcp = "tr8s.mcp_server:main"
+tr8s-studio = "tr8s.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+tr8s = ["web/*.html", "web/*.css", "web/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

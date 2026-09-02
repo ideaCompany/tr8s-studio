@@ -1,0 +1,114 @@
+{
+ "name": "SLOWJAM",
+ "tempo": 110.0,
+ "kit": 126,
+ "scale": "16",
+ "shuffle": 0,
+ "roots": {
+  "BD": "A1",
+  "SD": "E3",
+  "LT": "C2",
+  "MT": "C5",
+  "HT": "B1",
+  "RS": "F#4",
+  "RC": "F#5"
+ },
+ "variations": {
+  "A": {
+   "tracks": {
+    "BD": "x...x...x...x..."
+   }
+  },
+  "B": {
+   "tracks": {
+    "BD": "x...x...x...x...",
+    "LT": "..x...x...x...x.",
+    "HC": "....x.......x...",
+    "CH": "oooooooooooooooo",
+    "OH": "..o...o...o...o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": ". . A1 . . . E1 . . . A1 . . . E1 ."
+    }
+   }
+  },
+  "C": {
+   "tracks": {
+    "BD": "x...x...x...x...",
+    "LT": "..x...x...x...x.",
+    "RS": "o....o.....o....",
+    "HC": "....x.......x...",
+    "CH": "oooooooooooooooo",
+    "OH": "..o...o...o...o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": ". . A1 . . . E1 . . . A1 . . . E1 ."
+    }
+   }
+  },
+  "D": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "MT": "............xxxx",
+    "RS": "o....o.....o....",
+    "HC": "....x.......x...",
+    "CH": "oooooooooooooooo",
+    "OH": "..o...o...o...o."
+   }
+  },
+  "E": {
+   "tracks": {
+    "HC": "....x.......x...",
+    "OH": "..x...x...x...x."
+   }
+  },
+  "F": {
+   "tracks": {
+    "BD": "X..............."
+   }
+  },
+  "G": {
+   "tracks": {
+    "BD": "x...x...x...x...",
+    "LT": "..x...x...x...x.",
+    "RS": "o....o.....o....",
+    "HC": "....x.......x...",
+    "CH": "oooooooooooooooo",
+    "OH": "..o...o...o...o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": ". . A1 . . . E1 . . . A1 . . . E1 ."
+    }
+   }
+  },
+  "H": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "SD": "............oooo",
+    "RS": "o....o.....o....",
+    "HC": "....x.......x...",
+    "CH": "oooooooooooooooo",
+    "OH": "..o...o...o...o.",
+    "CC": "...............x"
+   }
+  }
+ },
+ "slot": 126,
+ "panel": "8-15",
+ "_meta": {
+  "style": "lofi",
+  "key": "A minor",
+  "about": "soft and behind the beat",
+  "built_by": "tr8s track.create",
+  "origin_panel": "8-15"
+ }
+}

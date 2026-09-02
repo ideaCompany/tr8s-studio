@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" data-theme="phosphor">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TR-8S STUDIO</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="bar">
+  <div class="brand">
+    <span class="logo">▚▞</span>
+    <span>TR&#8209;8S<span class="dim">/</span>STUDIO</span>
+  </div>
+
+  <div class="readouts">
+    <span class="readout" id="r-conn"><i>LINK</i><b>—</b></span>
+    <span class="readout"><i>FW</i><b id="r-fw">—</b></span>
+    <span class="readout"><i>BPM</i><b id="r-bpm">—</b></span>
+    <span class="readout"><i>POS</i><b id="r-pos">—</b></span>
+    <span class="readout" id="r-run"><i>RUN</i><b>STOP</b></span>
+    <button class="readout follow" id="r-follow" title="follow the pattern
+selected on the machine"><i>FOLLOW</i><b>—</b></button>
+    <button class="readout follow" id="r-finst" title="the instrument you
+touch on the machine becomes the selected one"><i>TRACK</i><b>ON</b></button>
+    <button class="readout follow" id="r-setup" title="what to switch on, on
+the machine"><i>SETUP</i><b>?</b></button>
+    <button class="readout follow" id="r-midi" title="what the machine is
+actually sending"><i>MIDI</i><b>—</b></button>
+    <button class="readout follow" id="r-log" title="a tagged log of every
+change, by source (user / ai / studio)"><i>LOG</i><b>0</b></button>
+  </div>
+
+  <div class="themes" role="group" aria-label="Theme">
+    <button data-set-theme="phosphor" title="Phosphor green">P</button>
+    <button data-set-theme="amber"    title="Amber">A</button>
+    <button data-set-theme="ice"      title="Ice">I</button>
+    <button data-set-theme="magenta"  title="Magenta">M</button>
+    <button data-set-theme="paper"    title="Paper (light)">□</button>
+  </div>
+</header>
+
+<main>
+  <!-- ─────────────────────────── machine ─────────────────────────── -->
+  <section class="panel machine">
+    <div class="panel-head">
+      <h2>MACHINE</h2>
+      <div class="views" role="group" aria-label="View">
+        <button id="v-grid" aria-pressed="false">GRID</button>
+        <button id="v-panel" aria-pressed="true">PANEL</button>
+      </div>
+      <div class="slotpick">
+        <button id="browse" title="Browse all 128 patterns">▤</button>
+        <label for="slot">PTN</label>
+        <input id="slot" value="8-07" size="5" spellcheck="false" autocomplete="off">
+        <button id="notes" aria-pressed="true"
+                title="Show note names on instruments carrying tune motion">NOTES</button>
+        <button id="load">LOAD</button>
+        <button id="undo" title="put back what the last edit overwrote">UNDO</button>
+      <button id="commit" disabled title="Save the edit buffer to this slot">WRITE</button>
+      </div>
+    </div>
+
+    <div class="ptn-meta">
+      <span id="m-name">—</span>
+      <span class="dim" id="m-detail"></span>
+    </div>
+
+    <div class="variations" id="variations" role="tablist" aria-label="Variation"></div>
+
+    <div class="grid-wrap" id="view-grid" hidden>
+      <div class="ruler" id="ruler"></div>
+      <div class="grid" id="grid" tabindex="0"></div>
+    </div>
+
+    <!-- a representation of the machine itself -->
+    <div class="panel-view" id="view-panel">
+
+      <!-- Roland's own section numbering; see docs/PANEL.md. Anything the
+           studio cannot reach over SysEx is drawn greyed, as context. -->
+      <!-- The deck shows STATE, not controls. Everything the studio cannot
+           press was removed: a button that does nothing is worse than no
+           button. What is left either reports the machine (LCD, tempo,
+           shuffle, A-H, the effect knobs that follow the panel) or actually
+           works (START/STOP). -->
+      <div class="deck">
+        <div class="lcd">
+          <span class="lcd-main" id="p-name">—</span>
+          <span class="lcd-sub"  id="p-sub"></span>
+          <span class="lcd-run"  id="p-run">■</span>
+        </div>
+
+        <div class="readouts-row">
+          <div class="tempo">
+            <span class="tempo-val" id="p-tempo">---</span>
+            <span class="tempo-lbl">TEMPO</span>
+          </div>
+          <div class="tempo">
+            <span class="tempo-val" id="p-shuffle">—</span>
+            <span class="tempo-lbl">SHUFFLE</span>
+          </div>
+          <div class="varrow">
+            <span class="lbl">VAR</span>
+            <div class="varbtns" id="p-vars"></div>
+          </div>
+          <button class="pbtn run" id="p-startstop" title="start or stop the
+machine's sequencer">START/STOP</button>
+        </div>
+
+        <div class="fxrow">
+          <div class="fxgroup" data-sec="ACCENT">
+            <div class="knob dead"><i></i><span>LEVEL</span></div>
+          </div>
+          <div class="fxgroup" data-sec="REVERB">
+            <div class="knob dead"><i></i><span>LEVEL</span></div>
+          </div>
+          <div class="fxgroup" data-sec="DELAY">
+            <div class="knob dead"><i></i><span>LEVEL</span></div>
+            <div class="knob dead"><i></i><span>TIME</span></div>
+            <div class="knob dead"><i></i><span>F.BACK</span></div>
+          </div>
+          <div class="fxgroup" data-sec="MASTER FX">
+            <div class="knob dead"><i></i><span>CTRL</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec sec-strips" data-sec="INSTRUMENTS">
+        <div class="strips" id="strips"></div>
+      </div>
+
+      <!-- the sound of the SELECTED instrument, and the tones nearest to it
+           by measurement: click to hear, click again to keep -->
+      <div class="sec sec-pads" data-sec="STEPS">
+        <div class="padrow">
+          <span class="lbl">STEP <b id="p-sel">BD</b></span>
+          <div class="pads" id="pads"></div>
+        </div>
+      <div class="sec sec-swap" data-sec="SOUND">
+        <div class="swap-armed" id="sw-armed" hidden>
+          <span>holding <b id="sw-armed-name">—</b> — click an instrument lane to put it there, or</span>
+          <button class="pbtn act" id="sw-disarm">DROP</button>
+        </div>
+        <div class="swap-now">
+          <span class="swap-inst" id="sw-inst">BD</span>
+          <span class="swap-name" id="sw-name">—</span>
+          <span class="swap-meta" id="sw-meta"></span>
+          <input id="sw-ask" placeholder="darker · shorter · brighter and longer…" autocomplete="off" spellcheck="false">
+          <button class="pbtn act" id="sw-go">SWAP</button>
+          <button class="pbtn act" id="sw-audition" title="hear the current tone">HEAR</button>
+          <button class="pbtn act" id="sw-browse" title="browse the whole catalogue">BROWSE</button>
+        </div>
+        <div class="swap-list" id="sw-list"></div>
+        <div class="dropzone" id="dropzone">
+          <span>drop a <b>.wav</b> here — or <label for="sw-file" class="link">pick one</label> — to put it on <b id="dz-inst">BD</b></span>
+          <input type="file" id="sw-file" accept=".wav,audio/wav" hidden>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <div class="kitstrip" id="kitstrip"></div>
+
+    <p class="hint note-hint" id="note-hint" hidden></p>
+
+    <p class="hint">
+      click a step to cycle <b>·</b> <b>o</b> <b>x</b> <b>X</b> — it writes the
+      slot at once. <b>UNDO</b> puts it back, <b>WRITE</b> makes it survive
+      power&#8209;off. On a row with notes, click one and use the arrow keys.
+      <span id="write-state" class="dim"></span>
+    </p>
+  </section>
+
+  <!-- a tagged log of every change this session -->
+  <div class="overlay" id="changelog" hidden>
+    <div class="sheet wide">
+      <div class="sheet-head">
+        <b>Change log</b>
+        <span class="sheet-tools">
+          <label class="tick"><input type="checkbox" id="cl-on" checked> logging on</label>
+          <button class="pbtn act" id="cl-copy">COPY</button>
+          <button class="pbtn act" id="cl-clear">CLEAR</button>
+          <button class="x" id="cl-close">×</button>
+        </span>
+      </div>
+      <div class="cl-list" id="cl-list"></div>
+    </div>
+  </div>
+
+  <!-- what the machine is actually sending -->
+  <div class="overlay" id="midi" hidden>
+    <div class="sheet wide">
+      <div class="sheet-head">
+        <b>MIDI received</b>
+        <span class="sheet-tools">
+          <label class="tick"><input type="checkbox" id="midi-clock"> show clock</label>
+          <button class="pbtn act" id="midi-copy">COPY</button>
+          <button class="pbtn act" id="midi-clear">CLEAR</button>
+          <button class="x" id="midi-close">×</button>
+        </span>
+      </div>
+      <div class="midi-summary" id="midi-summary"></div>
+      <pre class="midi-log" id="midi-log"></pre>
+      <p class="dim small" id="midi-hint"></p>
+    </div>
+  </div>
+
+  <!-- everything that has to be switched on ON THE MACHINE -->
+  <div class="overlay" id="setup" hidden>
+    <div class="sheet">
+      <div class="sheet-head">
+        <b>What to switch on, on the TR-8S</b>
+        <button class="x" id="setup-close">×</button>
+      </div>
+      <p class="dim small">Some things live on the panel and cannot be set over
+        USB. Each row says whether it is working right now.</p>
+
+      <div class="chk" id="chk-progchg">
+        <span class="dot"></span>
+        <div>
+          <b>Follow the pattern you select</b>
+          <div class="how">[UTILITY] → turn [VALUE] to <b>MIDI: Tx Prog Chg</b>
+            → [ENTER] → <b>ON</b></div>
+          <div class="state"></div>
+        </div>
+      </div>
+
+      <div class="chk" id="chk-notes">
+        <span class="dot"></span>
+        <div>
+          <b>Follow the A–H variation, and steps entered on the panel</b>
+          <div class="how">The machine sends nothing for either — verified
+            with every Tx setting on. So the studio <i>listens</i>: while a
+            pattern <b>plays</b>, its notes light the grid live and identify
+            the variation within a bar. <b>Tx EditData = ON</b> also sends the
+            beat counter (CC 2), which pins the bar phase exactly. While
+            <b>stopped</b> there is nothing to hear; presses made then show up
+            on the next START.</div>
+          <div class="state"></div>
+        </div>
+      </div>
+
+      <div class="chk" id="chk-edit">
+        <span class="dot"></span>
+        <div>
+          <b>Follow knobs and faders</b>
+          <div class="how">[UTILITY] → <b>MIDI: Tx EditData</b> → <b>ON</b>.
+            Then every TUNE, DECAY, CTRL and fader, plus accent, reverb,
+            delay, master FX and shuffle, moves on screen as you move it.
+            The manual's "Using the TR-8S as a MIDI Controller" also says to
+            set <b>SOUND: Local Sw</b> to <b>SURFACE</b> — do <i>not</i>, that
+            one silences the internal sound engine.</div>
+          <div class="state"></div>
+        </div>
+      </div>
+
+      <div class="chk" id="chk-motion">
+        <span class="dot"></span>
+        <div>
+          <b>Hear the melodies</b>
+          <div class="how"><b>MOTION [ON]</b> must be lit, and
+            <b>Coarse Tune</b> assigned to that instrument's CTRL knob
+            (hold [CTRL SELECT], press the instrument, pick Coarse Tune)</div>
+          <div class="state">cannot be checked from here — panel only</div>
+        </div>
+      </div>
+
+      <div class="chk" id="chk-ptn">
+        <span class="dot"></span>
+        <div>
+          <b>Per-pattern tempo, shuffle and kit</b>
+          <div class="how">[UTILITY] → <b>GENERAL</b> → set
+            <b>TempoSrc</b> / <b>ShuffleSrc</b> / <b>KitSel</b> to <b>PTN</b>.
+            On SYSTEM the panel wins and what a pattern stores is ignored.</div>
+          <div class="state">cannot be checked from here — panel only</div>
+        </div>
+      </div>
+
+      <div class="chk" id="chk-save">
+        <span class="dot"></span>
+        <div>
+          <b>Keep those settings after a power cycle</b>
+          <div class="how">If [UTILITY] → <b>GENERAL: Auto Save</b> is
+            <b>OFF</b>, press <b>[WRITE]</b> once</div>
+          <div class="state">cannot be checked from here — panel only</div>
+        </div>
+      </div>
+
+      <div class="sheet-note" id="setup-channels"></div>
+      <div class="fh-pin">
+        <span>follow only channel</span>
+        <select id="fh-channel"><option value="">any</option></select>
+      </div>
+    </div>
+  </div>
+
+  <!-- fader colour palette, opened from a channel strip -->
+  <div class="swatches" id="swatches" hidden>
+    <span class="sw-label" id="sw-label">BD</span>
+    <div class="sw-grid" id="sw-grid"></div>
+    <span class="sw-note">the TR-8S lights each fader a colour, saved with the
+      kit. Which index is which colour is inferred, not confirmed.</span>
+  </div>
+
+  <!-- ──────────────────────────── chat ───────────────────────────── -->
+  <section class="panel chat">
+    <div class="panel-head">
+      <h2>PROMPT</h2>
+      <button class="ai-chip" id="ai-chip" title="which assistant is connected — click to change"><i>○</i><b>NO ASSISTANT</b></button>
+      <select id="ai-model" title="which Claude model answers" hidden>
+        <option value="opus">OPUS</option>
+        <option value="sonnet">SONNET</option>
+      </select>
+      <button id="ai-new" title="Start a fresh conversation (the assistant forgets this one)" hidden>NEW</button>
+      <button id="clear" title="Clear the transcript">CLR</button>
+    </div>
+
+    <div class="connect" id="connect" hidden>
+      <h3>CONNECT AN ASSISTANT</h3>
+      <p class="dim">The studio drives the machine; an assistant talks to you and
+        uses the studio's tools. Pick how it signs in.</p>
+      <div class="providers">
+        <div class="prov" id="prov-claude">
+          <div class="prov-head"><b>Claude</b><span>your Claude subscription (Pro / Max), through Claude Code</span></div>
+          <div class="prov-body" id="claude-body"></div>
+        </div>
+        <div class="prov" id="prov-key">
+          <div class="prov-head"><b>Claude API key</b><span>pay as you go on the Claude Platform</span></div>
+          <div class="prov-body" id="key-body">
+            <ol class="steps">
+              <li>Open <a href="https://platform.claude.com/settings/keys" target="_blank" rel="noopener">platform.claude.com → API keys</a> and sign in.</li>
+              <li>Create a key. It starts with <code>sk-ant-</code> and is shown once.</li>
+              <li>Paste it here, press TEST, then USE.</li>
+            </ol>
+            <div class="keyrow">
+              <input id="key-in" type="password" placeholder="sk-ant-…" autocomplete="off" spellcheck="false">
+              <button id="key-test" type="button">TEST</button>
+              <button id="key-save" type="button">USE</button>
+            </div>
+            <div class="dim" id="key-msg"></div>
+          </div>
+        </div>
+        <div class="prov off"><div class="prov-head"><b>OpenAI / Codex</b><span>not yet</span></div></div>
+        <div class="prov off"><div class="prov-head"><b>Gemini</b><span>not yet</span></div></div>
+        <div class="prov off"><div class="prov-head"><b>Any MCP client</b><span>Claude Desktop, Cursor and friends can drive the machine through <code>tr8s-mcp</code>, with their own sign-in</span></div></div>
+      </div>
+    </div>
+
+    <div class="log" id="log" aria-live="polite"></div>
+
+    <form class="composer" id="composer">
+      <span class="caret">&gt;</span>
+      <input id="msg" placeholder="ask for a pattern, a kit, a melody…"
+             autocomplete="off" spellcheck="false">
+      <button id="stop" type="button" title="Stop the assistant mid-turn" hidden>STOP</button>
+      <button id="send" type="submit">RUN</button>
+    </form>
+  </section>
+</main>
+
+<!-- pattern browser -->
+<div class="overlay" id="browser" hidden>
+  <div class="picker">
+    <div class="picker-head">
+      <h3>PATTERNS</h3>
+      <input id="br-search" placeholder="filter by name…" autocomplete="off"
+             spellcheck="false">
+      <button id="br-scan">SCAN</button>
+      <button id="br-close">ESC</button>
+    </div>
+    <div class="picker-list" id="br-list"></div>
+    <p class="picker-foot dim" id="br-foot"></p>
+  </div>
+</div>
+
+<!-- tone picker: opened by clicking a tone name on a channel strip -->
+<div class="overlay" id="picker" hidden>
+  <div class="picker">
+    <div class="picker-head">
+      <h3>TONE <b id="pk-inst">BD</b></h3>
+      <input id="pk-search" placeholder="filter by name…" autocomplete="off"
+             spellcheck="false">
+      <select id="pk-cat"></select>
+      <button id="pk-close">ESC</button>
+    </div>
+    <div class="picker-list" id="pk-list"></div>
+    <p class="picker-foot dim" id="pk-foot"></p>
+  </div>
+</div>
+
+<footer class="bar foot">
+  <span id="status" class="dim">booting…</span>
+  <span class="dim right" id="hostinfo"></span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

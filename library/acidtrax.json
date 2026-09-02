@@ -1,0 +1,117 @@
+{
+ "name": "ACIDTRAX",
+ "tempo": 138.0,
+ "kit": 126,
+ "scale": "16",
+ "shuffle": 0,
+ "roots": {
+  "BD": "A1",
+  "SD": "E3",
+  "LT": "C2",
+  "MT": "C5",
+  "HT": "B1",
+  "RS": "F#4",
+  "RC": "F#5"
+ },
+ "variations": {
+  "A": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "CH": "o.x....o.o.....o"
+   }
+  },
+  "B": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "xxx.Xx.x.xxxxxx.",
+    "RS": ".o..o.o.o..o.o.o",
+    "HC": "....x.......x...",
+    "CH": "ooxoooxoooxoooxo",
+    "OH": "..x...x...x...x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "A1 A2 F2 . A1 A1 . A1 . F1 A2 A2 A1 E1 A1 ."
+    }
+   }
+  },
+  "C": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "xXXXXxX.x.xxXx..",
+    "RS": ".o..o.o.o..o.o.o",
+    "HC": "....x.......x...",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "..x...x...x...x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "D2 A2 A1 A2 A1 C2 A2 . A1 . A1 C2 A1 D2 . ."
+    }
+   }
+  },
+  "D": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "MT": "..............xx",
+    "HT": "............xx..",
+    "RS": ".o..o.o.o..o.o.o",
+    "HC": "....x.......x...",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "..x...x...x...x."
+   }
+  },
+  "E": {
+   "tracks": {
+    "CH": "ooxoooxoooxoooxo",
+    "OH": "..x...x...x...x."
+   }
+  },
+  "F": {
+   "tracks": {
+    "BD": "X...............",
+    "CC": "X..............."
+   }
+  },
+  "G": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "X.xxX..xxxXXXxxx",
+    "RS": ".o..o.o.o..o.o.o",
+    "HC": "....x.......x...",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "..x...x...x...x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "A1 . A1 F1 A1 . . A1 D2 G2 A1 A1 A1 G1 F1 C1"
+    }
+   }
+  },
+  "H": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "SD": "............x.xx",
+    "RS": ".o..o.o.o..o.o.o",
+    "HC": "....x.......x...",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "..x...x...x...x."
+   }
+  }
+ },
+ "slot": 121,
+ "panel": "8-10",
+ "_meta": {
+  "style": "acid",
+  "key": "A minor",
+  "about": "303 line with accents over 16th hats",
+  "built_by": "tr8s track.create",
+  "origin_panel": "8-10"
+ }
+}

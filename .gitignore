@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# captured device data and recordings are machine-specific and large
+backups/
+tones.json
+*.wav
+*.syx
+.run/
+
+# local runtime state
+*.pid
+*.log
+.claude/

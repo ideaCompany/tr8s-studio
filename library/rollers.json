@@ -1,0 +1,115 @@
+{
+ "name": "ROLLERS",
+ "tempo": 174.0,
+ "kit": 127,
+ "scale": "16",
+ "shuffle": 0,
+ "roots": {
+  "BD": "A1",
+  "SD": "E3",
+  "LT": "C3",
+  "MT": "C4",
+  "HT": "B1",
+  "CC": "A#4"
+ },
+ "variations": {
+  "A": {
+   "tracks": {
+    "BD": "X.........x.....",
+    "CH": "o.......o.x....."
+   }
+  },
+  "B": {
+   "tracks": {
+    "BD": "X.....o...x.....",
+    "SD": "....X..o....X.o.",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "CH": "o.x.o.x.o.x.o.x.",
+    "RC": "o.o.o.o.o.o.o.o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C3",
+     "notes": "D#3 . F3 . F3 . F3 . F3 . F3 . G#3 . C3 ."
+    }
+   }
+  },
+  "C": {
+   "tracks": {
+    "BD": "X.....o...x.....",
+    "SD": "....X..o....X.o.",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "RS": "o..o...o..o..o..",
+    "CH": "o.x.o.x.o.x.o.x.",
+    "RC": "o.o.o.o.o.o.o.o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C3",
+     "notes": "F3 . F3 . D#3 . G#3 . G#2 . G#3 . C2 . D#3 ."
+    }
+   }
+  },
+  "D": {
+   "tracks": {
+    "BD": "X...X.o.X.x.X...",
+    "SD": "....X..o....X.o.",
+    "MT": "..............xx",
+    "HT": "............xx..",
+    "RS": "o..o...o..o..o..",
+    "CH": "o.x.o.x.o.x.o.x.",
+    "RC": "o.o.o.o.o.o.o.o."
+   }
+  },
+  "E": {
+   "tracks": {
+    "SD": "....X...........",
+    "CH": "o.x.o.x.o.x.o.x."
+   }
+  },
+  "F": {
+   "tracks": {
+    "BD": "X...............",
+    "CC": "X..............."
+   }
+  },
+  "G": {
+   "tracks": {
+    "BD": "X.....o...x.....",
+    "SD": "....X..o....X.o.",
+    "LT": "x.x.x.x.x.x.x.x.",
+    "RS": "o..o...o..o..o..",
+    "CH": "o.x.o.x.o.x.o.x.",
+    "RC": "o.o.o.o.o.o.o.o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C3",
+     "notes": "F3 . F3 . F3 . F3 . F3 . F3 . D#2 . C3 ."
+    }
+   }
+  },
+  "H": {
+   "tracks": {
+    "BD": "X...X.o.X.x.X...",
+    "SD": "....X..o....Xooo",
+    "RS": "o..o...o..o..o..",
+    "CH": "o.x.o.x.o.x.o.x.",
+    "CC": "...............x",
+    "RC": "o.o.o.o.o.o.o.o."
+   }
+  }
+ },
+ "slot": 127,
+ "panel": "8-16",
+ "_meta": {
+  "style": "dnb",
+  "key": "F minor",
+  "about": "two-step at 174",
+  "built_by": "tr8s track.create",
+  "origin_panel": "8-16"
+ }
+}

@@ -1,0 +1,125 @@
+{
+ "name": "PEAKTIME",
+ "tempo": 138.0,
+ "kit": 125,
+ "scale": "16",
+ "shuffle": 0,
+ "roots": {
+  "BD": "C2",
+  "SD": "E3",
+  "LT": "C2",
+  "MT": "C5",
+  "HT": "F#3",
+  "RS": "F#4"
+ },
+ "variations": {
+  "A": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "SD": "..o.............",
+    "CH": "..x.........o..."
+   }
+  },
+  "B": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "x.x.x.xxx.x.x.xx",
+    "MT": "o....o.....o....",
+    "RS": "..o...o..o.....o",
+    "HC": "....X.......X...",
+    "CH": "ooxoooxoooxoooxo",
+    "OH": "..X...X...X...X.",
+    "RC": "o.o.o.o.o.o.o.o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "C2 . C2 . C2 . C2 D#1 A#1 . C2 . A#1 . D#1 C2"
+    }
+   }
+  },
+  "C": {
+   "tracks": {
+    "BD": "X...X...X...X..o",
+    "LT": "x.x.x.xxx.x.x.xx",
+    "MT": "o....o.....o....",
+    "RS": "..o...o..o.....o",
+    "HC": "....X.......X...",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "..X...X...X...X.",
+    "RC": "o.o.o.o.o.o.o.o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "C2 . C2 . C2 . C2 D#2 C2 . C2 . G1 . A#1 C2"
+    }
+   }
+  },
+  "D": {
+   "tracks": {
+    "BD": "X...X...X...X..o",
+    "MT": "o....o.....oxxxx",
+    "RS": "..o...o..o..o...",
+    "HC": "....X.......X...",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "..X...X...X...X.",
+    "RC": "o.o.o.o.o.o.o.o."
+   }
+  },
+  "E": {
+   "tracks": {
+    "CH": "o.x.o.x.o.x.o.x.",
+    "OH": "..x...x...x...x."
+   }
+  },
+  "F": {
+   "tracks": {
+    "BD": "X...............",
+    "CC": "X..............."
+   }
+  },
+  "G": {
+   "tracks": {
+    "BD": "X...X...X...X..o",
+    "LT": "x.x.x.xxx.x.x.xx",
+    "MT": "o....o.....o....",
+    "RS": "..o...o..o..o..o",
+    "HC": "....X.......X...",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "..X...X...X...X.",
+    "RC": "o.o.o.o.o.o.o.o."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "C2 . C2 . C2 . C2 A#1 C2 . G1 . A#1 . G1 C2"
+    }
+   }
+  },
+  "H": {
+   "tracks": {
+    "BD": "X...X...X...X..o",
+    "SD": "............x.xx",
+    "MT": "o....o.....o....",
+    "RS": "..o...o..o..o..o",
+    "HC": "....X.......X...",
+    "CH": "xoxoxoxoxoxoxoxo",
+    "OH": "..X...X...X...X.",
+    "RC": "o.o.o.o.o.o.o.o."
+   }
+  }
+ },
+ "slot": 120,
+ "panel": "8-09",
+ "_meta": {
+  "style": "techno",
+  "key": "C minor",
+  "about": "driving peak-time techno",
+  "built_by": "tr8s track.create",
+  "origin_panel": "8-09"
+ }
+}

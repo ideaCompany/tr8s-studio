@@ -1,0 +1,114 @@
+{
+ "name": "MINIMAL",
+ "tempo": 129.0,
+ "kit": 123,
+ "scale": "16",
+ "shuffle": 0,
+ "roots": {
+  "BD": "F#1",
+  "SD": "E3",
+  "LT": "C2",
+  "MT": "C4",
+  "HT": "F#3"
+ },
+ "variations": {
+  "A": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "RS": "o..o...o..o..o..",
+    "CH": ".o..o...o..o...o"
+   }
+  },
+  "B": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "x...x...x...x...",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".o..o.o.o..o.o.o"
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "F#2 . . . A2 . . . C#3 . . . F#3 . . ."
+    }
+   }
+  },
+  "C": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "x...x...x...x...",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".x..x.x.x..x.x.x",
+    "OH": "......x.......x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "F#2 . . . A2 . . . C#3 . . . F#3 . . ."
+    }
+   }
+  },
+  "D": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "MT": "............xxxx",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".x..x.x.x..x.x.x",
+    "OH": "......x.......x."
+   }
+  },
+  "E": {
+   "tracks": {
+    "RS": "o..o...o..o..o..",
+    "CH": ".o..o.o.o..o.o.o"
+   }
+  },
+  "F": {
+   "tracks": {
+    "BD": "X..............."
+   }
+  },
+  "G": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "LT": "x...x...x...x...",
+    "MT": "ooo.oo.oo.oo.oo.",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".x..x.x.x..x.x.x",
+    "OH": "......x.......x."
+   },
+   "melodies": {
+    "LT": {
+     "mode": "coarse",
+     "root": "C2",
+     "notes": "F#2 . . . A2 . . . C#3 . . . F#3 . . ."
+    }
+   }
+  },
+  "H": {
+   "tracks": {
+    "BD": "X...X...X...X...",
+    "MT": "ooo.oo.oo.ooxxxx",
+    "RS": "o..o...o..o..o..",
+    "HC": "..o....o.....o..",
+    "CH": ".x..x.x.x..x.x.x",
+    "OH": "......x.......x."
+   }
+  }
+ },
+ "slot": 124,
+ "panel": "8-13",
+ "_meta": {
+  "style": "hypnotic",
+  "key": "F# phrygian",
+  "about": "sparse, an arpeggio turning under it",
+  "built_by": "tr8s track.create",
+  "origin_panel": "8-13"
+ }
+}
