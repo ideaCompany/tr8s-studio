@@ -82,6 +82,15 @@ Two rules from [`docs/RIG-FM1.md`](../RIG-FM1.md):
 
 Issue 04. Issue 03 only where the spike found something missing.
 
+Related upstream issues on `ideaCompany/tr8s-studio`:
+
+- ideaCompany/tr8s-studio#5: the system prompt edit here touches the same
+  `SYSTEM` text. Make the FM-1 section state facts the studio knows, not
+  caveats it repeats.
+- ideaCompany/tr8s-studio#6: melodies on the TR-8S need Coarse Tune and MOTION
+  ON by hand. When the FM-1 carries the synth parts (`line` defaults to
+  `none`), that setup is no longer needed for those songs.
+
 ## Pipeline
 
 Sonnet implements; Opus reviews.

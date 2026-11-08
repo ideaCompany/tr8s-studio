@@ -69,6 +69,21 @@ See [`docs/RIG-FM1.md`](../RIG-FM1.md), section 1, "Jam mode in the studio".
 
 Issues 00 (macOS backend), 04 and 05.
 
+Upstream issues on `ideaCompany/tr8s-studio`. Fix the first two before this
+one; the rest make Jam mode much better:
+
+- ideaCompany/tr8s-studio#9: a tool write is sometimes logged as a USER edit.
+  The FM-1's change-log tagging and undo depend on attribution being right.
+- ideaCompany/tr8s-studio#13: under about 1400 CSS px the chat stacks below the
+  machine. The FM-1 panel needs room, and a MacBook screen is about that width.
+- ideaCompany/tr8s-studio#12: the variation buttons are display-only. The
+  assistant needs to switch A–H itself ("bring the pad in at the break").
+- ideaCompany/tr8s-studio#11: at startup the studio and the machine can disagree
+  until the dial moves.
+- Assistant polish, which matters more once prompting is the main way in:
+  ideaCompany/tr8s-studio#1 (raw markdown), #2 (no progress signal), #3 (slow
+  first turn), #4 (noisy tool lines), #5 (repeated PTN/SYSTEM caveat).
+
 ## Pipeline
 
 Sonnet implements; Opus reviews.
