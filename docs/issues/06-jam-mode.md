@@ -81,8 +81,10 @@ one; the rest make Jam mode much better:
 - ideaCompany/tr8s-studio#11: at startup the studio and the machine can disagree
   until the dial moves.
 - Assistant polish, which matters more once prompting is the main way in:
-  ideaCompany/tr8s-studio#1 (raw markdown), #2 (no progress signal), #3 (slow
-  first turn), #4 (noisy tool lines), #5 (repeated PTN/SYSTEM caveat).
+  ideaCompany/tr8s-studio#1 (raw markdown), ideaCompany/tr8s-studio#2 (no
+  progress signal), ideaCompany/tr8s-studio#3 (slow first turn),
+  ideaCompany/tr8s-studio#4 (noisy tool lines), ideaCompany/tr8s-studio#5
+  (repeated PTN/SYSTEM caveat).
 
 ## Pipeline
 
